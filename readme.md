@@ -17,9 +17,9 @@ for linux：
 * sqlite3
 
 for windows：
-* plyvel-win32
-* base58
-* pysqlite3
+* `python -m pip install plyvel-win32`
+* `python -m pip install base58`
+* `python -m pip install pysqlite3`
 
 #### Usage
 To use this script, you will need copy of chainstate database as created by [bitcoin core](https://bitcoin.org/en/bitcoin-core/)
@@ -33,11 +33,19 @@ Show help
 ```
 python btcposbal2csv.py -h
 ```
-#### Example:  
+#### Example:
+
+* Linux  
 The following will read from `/home/USER/.bitcoin/chainstate`, and write result to `/home/USER/addresses_with_balance.csv`.
 ```
 python btcposbal2csv.py /home/USER/.bitcoin/chainstate /home/USER/addresses_with_balance.csv
 ```
+* Windows
+
+```
+python btcposbal2csv.py E:\Users\user\AppData\Roaming\Bitcoin\chainstate C:\Users\user\Desktop\addresses_with_balance.csv
+```
+
 
 ##### Notice
 * The output may not be complete as there are some transactions which are not understood by the decoding lib, or that which do not have "address" at all. Such transactions are not processed. Number of them and the total ammount in such transactions is displayed after the analysis.  
