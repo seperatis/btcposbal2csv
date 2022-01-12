@@ -23,7 +23,11 @@ def process(csvfile):
             else:
                 ripemd_bin = tocondensed(row.split(',')[0])
                 ripemd_encoded = binascii.hexlify(ripemd_bin)
-            print(row[: -1] + ',' + ripemd_encoded.decode())
+            # print(row[: -1] + ',' + ripemd_encoded.decode())
+            with open('result.txt', 'a') as result:
+                print(i)
+                result.write(ripemd_encoded.decode() + '\n')
+            
 
 
 def input_args():
